@@ -2,7 +2,7 @@
 
 #DEFAULT LOCATION : $HOME/.local/share/Steam/steamapps/shadercache/1172470/DXVK_state_cache
 #Change the location to yours
-PATH_SHADER="/run/media/nyx/Warrior/SteamLibrary/steamapps/shadercache/1172470/DXVK_state_cache/"
+PATH_SHADER="CHANGE ME"
 #Shadercache filename
 FILE_SHADER="r5apex.dxvk-cache"
 
