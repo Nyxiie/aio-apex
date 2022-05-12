@@ -10,27 +10,36 @@
 ####################
 
 #Change the location(s) to yours
-PATH_SHADER="CHANGEME"
-PATH_VIDEOCONFIG="CHANGEME"
-PATH_AUTOEXEC="CHANGEME"
-#Shadercache filename
-FILE_SHADER="r5apex.dxvk-cache"
+PATH_SHADER=""
+PATH_VIDEOCONFIG=""
+PATH_AUTOEXEC=""
 
-echo "1. Install Community Shadercache"
-echo "2. Install More FPS config"
+ALIVE=TRUE
+
+while [[ $ALIVE == TRUE ]]; do
+
+echo "1. Install gamemoderun for Apex"
+echo "2. Install Community Shadercache"
+echo "3. Install More FPS config"
 echo "3. Exit"
 
 read option
 
-
 if [[ $option == 1 ]]; then
-    #Deletes file if exists in current directory
-    if [[ -e "$FILE_SHADER" ]]; then
-        rm $FILE_SHADER
+    echo "1. Install for Arch based distros"
+    echo "2. Install for Debian based distros"
+    read distro
+    if [[ $distro == 1 ]]; then
+        sudo pacman -S --noconfirm gamemode
+        echo "Please add ' gamemoderun %command% ' to your Launch options!"
+    elif [[ $distro == 2 ]]; then
+        apt-get install -y gamemode
+        echo "Please add ' gamemoderun %command% ' to your Launch options!"
     fi
 
+
+elif [[ $option == 2 ]]; then
     #Downloading the shadercache from bcook254
-    echo "Downloading Shadercache"
     wget https://github.com/bcook254/apex-legends-cache/raw/main/r5apex.dxvk-cache
     echo "Downloaded Shadercache"
 
@@ -38,16 +47,25 @@ if [[ $option == 1 ]]; then
     mv r5apex.dxvk-cache $PATH_SHADER
     echo "Shadercache moved to $PATH_SHADER"
 
-elif [[ $option == 2 ]]; then
+
+
+
+elif [[ $option == 3 ]]; then
+
     echo "Downloading videoconfig and autoexec"
-    wget https://github.com/Nyxiie/aio-apex/configs/videoconfig.txt
-    wget https://github.com/Nyxiie/aio-apex/configs/autoexec.cfg
-
+    wget https://github.com/Nyxiie/aio-apex/raw/master/configs/videoconfig.txt
     mv videoconfig.txt $PATH_VIDEOCONFIG
-    mv autoexec.cfg $PATH_AUTOEXEC
 
-    echo "Installed configs , DONT FORGET TO CHANGE YOUR RESOLUTION IN VIDEOCONFIG.TXT"
-    echo "Path : $PATH_VIDEOCONFIG"
+    wget https://github.com/Nyxiie/aio-apex/raw/master/configs/autoexec.cfg
+    mv autoexec.cfg $PATH_AUTOEXEC
+    
+    
+
+    echo "Installed FPS Boost Configs"
+
+
+#exit programm
 else
     exit 0
 fi
+done
