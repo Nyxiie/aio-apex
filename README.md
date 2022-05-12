@@ -23,7 +23,7 @@
 * [License](#license)
 
 ### Prerequisites
-
+CHANGE YOUR PATHS IN apextools.sh
 
 
 * wget
