@@ -39,6 +39,13 @@ Download file and give permissions
 ```sh
 chmod +x apextools.sh
 ```
+
+### ToDo
+
+- [X] Adding gamemoderun
+- [ ] Distro checker
+- [ ] Automatic Steam/Apex Folder Checker
+
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/Nyxiie/aio-apex/blob/main/LICENSE.md) for more information.
