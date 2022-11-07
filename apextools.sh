@@ -21,7 +21,7 @@ while [[ $ALIVE == TRUE ]]; do
 echo "1. Install gamemoderun for Apex"
 echo "2. Install Community Shadercache"
 echo "3. Install More FPS config"
-echo "3. Exit"
+echo "4. Exit"
 
 read option
 
